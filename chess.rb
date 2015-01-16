@@ -76,7 +76,7 @@ class Bishop < Piece
 	def distance
 	distance = x(final)-x(current)
 	realdistance= distance.abs
-end
+	end
 
 	if x(final)==x(current)+realdistance && y(final)==y(current)+realdistance
 		return valid
@@ -90,15 +90,39 @@ end
 
 	elsif x(final)==x(current)+realdistance &&y(final)==y(current)-realdistance
 		return valid
+	else return invalid
 
 	end
 		
 end
 
 
-# class Rook < Piece
-#     # move laterally unlimited amount of spaces
-# end
+class Rook < Piece
+   
+	def distance
+	distance = x(final)-x(current)
+	xdistance= distance.abs
+	end
+
+	distance = y(final)-y(current)
+	ydistance= distance.abs
+
+	if x(final)==x(current)+xdistance && y(final)==y(current)
+		return valid
+
+	elsif x(final)==x(current)-xdistance && y(final)==y(current)
+		return valid
+	
+	elsif y(final)==y(current)-ydistance && x(final)==x(current)
+		return valid
+
+	elsif y(final)==y(current)+ydistance && x(final)==x(current)
+
+		
+
+	end
+    # move laterally unlimited amount of spaces
+end
 
 
 
