@@ -60,13 +60,46 @@ class Pawn < Piece
 			return valid
 		else return invalid
 
-			
+		end
+
+	end		
 				
 		 
 
-    # moves forward one space
-    # if initial movement, can move two spaces
+   
 end
+
+
+
+class Bishop < Piece
+    
+	def distance
+	distance = x(final)-x(current)
+	realdistance= distance.abs
+end
+
+	if x(final)==x(current)+realdistance && y(final)==y(current)+realdistance
+		return valid
+	
+	elsif x(final)==x(current)-realdistance &&y(final)==y(current)-realdistance
+		return valid
+
+	elsif x(final)==x(current)-realdistance &&y(final)==y(current)+realdistance
+
+		
+
+	elsif x(final)==x(current)+realdistance &&y(final)==y(current)-realdistance
+		return valid
+
+	end
+		
+end
+
+
+# class Rook < Piece
+#     # move laterally unlimited amount of spaces
+# end
+
 
 
 
@@ -138,9 +171,6 @@ board.check_movement("a2", "a3")
 
 
 
-# class Rook < Piece
-#     # move laterally unlimited amount of spaces
-# end
 
 
 # class Queen < Piece
